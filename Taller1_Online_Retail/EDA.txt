@@ -1,0 +1,24 @@
+# Análisis Exploratorio de Datos (EDA) - Dataset de Transacciones Comerciales
+
+## 📌 Descripción General del Dataset
+
+Este conjunto de datos contiene registros de transacciones comerciales de venta minorista, con información detallada sobre facturas, productos, cantidades, precios y ubicaciones geográficas. Los datos parecen corresponder a un negocio de retail o e-commerce con operaciones internacionales.
+
+**Características principales:**
+- Período cubierto: Diciembre 2010 - Diciembre 2011 (estimado)
+- Total de registros: 541,909 (en el dataset original)
+- Campos clave: Facturas, productos, clientes, cantidades y precios
+
+## 🔍 Lectura y Transformación de Datos
+
+## Descripcion Campo
+Campo	Tipo de Dato	Descripción	Problemas Comunes
+InvoiceNo	Texto (str)	Número de factura. Si empieza con 'C', es una cancelación.	Valores duplicados o formatos inconsistentes.
+StockCode	Texto (str)	Código único del producto. Ejemplo: "85123A".	Códigos mal registrados (ejemplo: "POST").
+Description	Texto (str)	Nombre del producto. Ejemplo: "WHITE HANGING HEART T-LIGHT HOLDER".	Valores faltantes (NaN) o descripciones vacías.
+Quantity	Entero (int)	Cantidad vendida (negativo = devolución).	Outliers (ejemplo: 100,000 unidades).
+InvoiceDate	Fecha (datetime)	Fecha y hora de la transacción.	Formatos incorrectos o fuera de rango.
+UnitPrice	Decimal (float)	Precio por unidad.	Valores cero o negativos (¿válidos?).
+CustomerID	Texto (str)	Identificador del cliente.	Valores faltantes (NaN).
+Country	Texto (str)	País de origen de la transacción. Ejemplo: "United Kingdom".	Sesgo geográfico (mayoría de un país).
+
