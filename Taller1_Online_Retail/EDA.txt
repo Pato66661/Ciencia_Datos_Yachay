@@ -77,14 +77,14 @@ std       1711.598536             NaN     270.820248
 
 ## Descripcion Campo
 Campo	Tipo de Dato	Descripción	Problemas Comunes
-InvoiceNo	Texto (str)	Número de factura. Si empieza con 'C', es una cancelación.	Valores duplicados o formatos inconsistentes.
-StockCode	Texto (str)	Código único del producto. Ejemplo: "85123A".	Códigos mal registrados (ejemplo: "POST").
-Description	Texto (str)	Nombre del producto. Ejemplo: "WHITE HANGING HEART T-LIGHT HOLDER".	Valores faltantes (NaN) o descripciones vacías.
-Quantity	Entero (int)	Cantidad vendida (negativo = devolución).	Outliers (ejemplo: 100,000 unidades).
-InvoiceDate	Fecha (datetime)	Fecha y hora de la transacción.	Formatos incorrectos o fuera de rango.
-UnitPrice	Decimal (float)	Precio por unidad.	Valores cero o negativos (¿válidos?).
-CustomerID	Texto (str)	Identificador del cliente.	Valores faltantes (NaN).
-Country	Texto (str)	País de origen de la transacción. Ejemplo: "United Kingdom".	Sesgo geográfico (mayoría de un país).
+InvoiceNo	Texto (str)	Número de factura. Si empieza con 'C', es una cancelación.	Valores duplicados o formatos inconsistentes. Categórico (Nominal)
+StockCode	Texto (str)	Código único del producto. Ejemplo: "85123A".	Códigos mal registrados (ejemplo: "POST").Categórico (Nominal)
+Description	Texto (str)	Nombre del producto. Ejemplo: "WHITE HANGING HEART T-LIGHT HOLDER".	Valores faltantes (NaN) o descripciones vacías.Categórico (Nominal)
+Quantity	Entero (int)	Cantidad vendida (negativo = devolución).	Outliers (ejemplo: 100,000 unidades).Numérico Discreto 
+InvoiceDate	Fecha (datetime)	Fecha y hora de la transacción.	Formatos incorrectos o fuera de rango. Fecha
+UnitPrice	Decimal (float)	Precio por unidad.	Valores cero o negativos (¿válidos?).Numérico Continuo
+CustomerID	Texto (str)	Identificador del cliente.	Valores faltantes (NaN).Categórico (Nominal)
+Country	Texto (str)	País de origen de la transacción. Ejemplo: "United Kingdom".	Sesgo geográfico (mayoría de un país).Categórico (Nominal)
 
 ## 🔍 Hallazgos Clave
 
