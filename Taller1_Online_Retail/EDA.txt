@@ -7,7 +7,26 @@ Este conjunto de datos contiene registros de transacciones comerciales de venta 
 **Características principales:**
 - Período cubierto: Diciembre 2010 - Diciembre 2011 (estimado)
 - Total de registros: 541,909 (en el dataset original)
+- Total de registros: 498,307 (en el dataset ajustado)
 - Campos clave: Facturas, productos, clientes, cantidades y precios
+
+Data columns (total 8 columns):
+ #   Column       Non-Null Count   Dtype         
+---  ------       --------------   -----         
+ 0   InvoiceNo    541909 non-null  object        
+ 1   StockCode    541909 non-null  object        
+ 2   Description  540455 non-null  object        
+ 3   Quantity     541909 non-null  int64         
+ 4   InvoiceDate  541909 non-null  datetime64[ns]
+ 5   UnitPrice    541909 non-null  float64       
+ 6   CustomerID   406829 non-null  float64       
+ 7   Country      541909 non-null  object        
+dtypes: datetime64[ns](1), float64(2), int64(1), object(4)
+memory usage: 33.1+ MB
+None
+
+max      18287.000000             NaN  
+std       1713.600303             NaN 
 
 ## 🔍 Lectura y Transformación de Datos
 
@@ -21,4 +40,25 @@ InvoiceDate	Fecha (datetime)	Fecha y hora de la transacción.	Formatos incorrect
 UnitPrice	Decimal (float)	Precio por unidad.	Valores cero o negativos (¿válidos?).
 CustomerID	Texto (str)	Identificador del cliente.	Valores faltantes (NaN).
 Country	Texto (str)	País de origen de la transacción. Ejemplo: "United Kingdom".	Sesgo geográfico (mayoría de un país).
+
+## 🔍 Hallazgos Clave
+
+1. **Distribución de Quantity**:
+   - Media: 11.01 unidades por transacción
+   - 75% de transacciones tienen ≤12 unidades
+   - Valor extremo: 80,995 unidades (posible error)
+
+2. **UnitPrice**:
+   - Valor mínimo negativo (-11,062.06) indica posibles errores
+   - 75% de productos cuestan ≤£3.75
+
+3. **Clientes**:
+   - Solo 380,265 registros con CustomerID (76% completitud)
+   - Rango de IDs: 12,346 a 18,287
+
+4. **TotalPrice**:
+   - Transacción promedio: £18.38
+   - Máxima venta única: £168,469.60 
+
+  ####Creador por Patricio Estévez
 
