@@ -10,23 +10,68 @@ Este conjunto de datos contiene registros de transacciones comerciales de venta 
 - Total de registros: 498,307 (en el dataset ajustado)
 - Campos clave: Facturas, productos, clientes, cantidades y precios
 
-Data columns (total 8 columns):
+  15287.690570             NaN  
+min      12346.000000             NaN  
+25%      13953.000000             NaN  
+50%      15152.000000             NaN  
+75%      16791.000000             NaN  
+max      18287.000000             NaN  
+std       1713.600303             NaN  
+
+RangeIndex: 498307 entries, 0 to 498306
+Data columns (total 9 columns):
  #   Column       Non-Null Count   Dtype         
 ---  ------       --------------   -----         
- 0   InvoiceNo    541909 non-null  object        
- 1   StockCode    541909 non-null  object        
- 2   Description  540455 non-null  object        
- 3   Quantity     541909 non-null  int64         
- 4   InvoiceDate  541909 non-null  datetime64[ns]
- 5   UnitPrice    541909 non-null  float64       
- 6   CustomerID   406829 non-null  float64       
- 7   Country      541909 non-null  object        
-dtypes: datetime64[ns](1), float64(2), int64(1), object(4)
-memory usage: 33.1+ MB
+ 0   InvoiceNo    498307 non-null  object        
+ 1   StockCode    498307 non-null  object        
+ 2   Description  498307 non-null  object        
+ 3   Quantity     498307 non-null  int64         
+ 4   InvoiceDate  498307 non-null  datetime64[ns]
+ 5   UnitPrice    498307 non-null  float64       
+ 6   CustomerID   380265 non-null  float64       
+ 7   Country      498307 non-null  object        
+ 8   TotalPrice   498307 non-null  float64       
+dtypes: datetime64[ns](1), float64(3), int64(1), object(4)
+memory usage: 34.2+ MB
 None
+        InvoiceNo StockCode                         Description  \
+count    498307.0    498307                              498307   
+unique    21928.0      3765                                3863   
+top      573585.0    85123A  white hanging heart t-light holder   
+freq        988.0      2283                                2341   
+mean          NaN       NaN                                 NaN   
+min           NaN       NaN                                 NaN   
+25%           NaN       NaN                                 NaN   
+50%           NaN       NaN                                 NaN   
+75%           NaN       NaN                                 NaN   
+max           NaN       NaN                                 NaN   
+std           NaN       NaN                                 NaN   
 
-max      18287.000000             NaN  
-std       1713.600303             NaN 
+             Quantity                    InvoiceDate      UnitPrice  \
+count   498307.000000                         498307  498307.000000   
+unique            NaN                            NaN            NaN   
+top               NaN                            NaN            NaN   
+freq              NaN                            NaN            NaN   
+mean        11.006356  2011-07-05 06:48:04.930213632       2.578170   
+min         -3.000000            2010-12-01 08:26:00  -11062.060000   
+25%          1.000000            2011-03-28 15:49:00       1.250000   
+50%          4.000000            2011-07-20 16:17:00       2.080000   
+75%         12.000000            2011-10-19 12:11:00       3.750000   
+max      80995.000000            2011-12-09 12:50:00       8.740000   
+std        160.372574                            NaN      22.259214   
+
+           CustomerID         Country     TotalPrice  
+count   380265.000000          498307  498307.000000  
+unique            NaN              38            NaN  
+top               NaN  United Kingdom            NaN  
+freq              NaN          456045            NaN  
+mean     15296.380598             NaN      18.383406  
+min      12346.000000             NaN  -11062.060000  
+25%      13969.000000             NaN       3.380000  
+50%      15159.000000             NaN       8.500000  
+75%      16795.000000             NaN      17.000000  
+max      18287.000000             NaN  168469.600000  
+std       1711.598536             NaN     270.820248  
 
 ## 🔍 Lectura y Transformación de Datos
 
@@ -60,5 +105,5 @@ Country	Texto (str)	País de origen de la transacción. Ejemplo: "United Kingdom
    - Transacción promedio: £18.38
    - Máxima venta única: £168,469.60 
 
-  ####Creador por Patricio Estévez
+  ####Creado por Patricio Estévez
 
